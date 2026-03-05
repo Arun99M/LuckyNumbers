@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".MainActivityrandomluckynumber">
+
+    <TextView
+        android:id="@+id/txtView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Lucky Number Is"
+        android:textSize="32sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08"/>
+
+    <TextView
+        android:id="@+id/txtlucynumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="888"
+        android:textColor="#FFFFFF"
+        android:textSize="80sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView1" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#FF5722" android:textColor="#FFFFFF"
+        android:text="Share My Luck"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtlucynumber" />
+
+    <TextView
+        android:id="@+id/txtCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Total Numbers Generated: 0"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+
+    <TableLayout
+        android:id="@+id/historyHeaderTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/table_border"
+        android:padding="2dp"
+        android:stretchColumns="0,1,2"
+        app:layout_constraintTop_toBottomOf="@+id/txtCount">
+
+        <TableRow
+            android:background="#66000000"
+            android:backgroundTint="#7CFC00"
+            android:textColor="#000000"
+            android:padding="12dp">
+            <TextView
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="S.No"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="User Name"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Lucky Number"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/table_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyHeaderTable">
+
+        <TableLayout
+            android:id="@+id/dynamicTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
